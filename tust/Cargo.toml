@@ -1,0 +1,25 @@
+[package]
+name = "tust"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+description = "A modern, batteries-included test framework for Rust"
+keywords = ["testing", "test", "framework", "bdd", "fixtures"]
+categories = ["development-tools::testing"]
+
+[dependencies]
+tust-macros = { path = "../tust-macros", version = "0.1.0" }
+tust-runtime = { path = "../tust-runtime", version = "0.1.0" }
+tust-assertions = { path = "../tust-assertions", version = "0.1.0" }
+
+# Re-export for convenience
+colored.workspace = true
+
+[features]
+default = []
+tokio = ["tust-runtime/tokio"]
+async-std = ["tust-runtime/async-std"]

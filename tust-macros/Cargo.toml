@@ -1,0 +1,19 @@
+[package]
+name = "tust-macros"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+description = "Procedural macros for the tust test framework"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn.workspace = true
+quote.workspace = true
+proc-macro2.workspace = true
+tust-core = { path = "../tust-core", version = "0.1.0" }

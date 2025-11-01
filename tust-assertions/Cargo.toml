@@ -1,0 +1,18 @@
+[package]
+name = "tust-assertions"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+authors.workspace = true
+description = "Rich assertion library for tust test framework"
+
+[dependencies]
+colored.workspace = true
+similar.workspace = true
+tust-runtime = { path = "../tust-runtime", version = "0.1.0" }
+
+[dev-dependencies]
+pretty_assertions.workspace = true

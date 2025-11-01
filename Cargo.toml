@@ -1,0 +1,40 @@
+[workspace]
+resolver = "2"
+members = [
+    "tust",
+    "tust-macros",
+    "tust-core",
+    "tust-runtime",
+    "tust-assertions",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/GeorgePearse/tust"
+homepage = "https://github.com/GeorgePearse/tust"
+authors = ["George Pearse"]
+
+[workspace.dependencies]
+# Proc macro dependencies
+syn = { version = "2.0", features = ["full", "parsing", "extra-traits"] }
+quote = "1.0"
+proc-macro2 = "1.0"
+
+# Runtime dependencies
+colored = "2.0"
+similar = "2.3"  # For diff generation
+
+# Development dependencies
+trybuild = "1.0"
+pretty_assertions = "1.4"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
